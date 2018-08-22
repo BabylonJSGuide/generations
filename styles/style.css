@@ -1,0 +1,61 @@
+div {
+	position:absolute;
+	font-size:12pt;
+}
+
+#photographs {
+	top:280px;
+}
+
+#photographs div {
+	position:static;
+}
+
+#photographs .frame {
+	float:left;
+	margin:10px;
+}		
+.sibln {
+	width:2px;
+	height:60px;
+	border-left:solid 1px black;
+	top:95px;
+}
+			
+#h, #w, .sib {
+	width:250px;
+	height:80px;
+	top:5px;
+}
+			
+.sib {
+	top:165px;
+}
+		
+#h {
+	text-align:right;
+	left:342px;
+}
+			
+#w {
+	left:609px;
+}
+			
+#m {
+	width:7px;
+	top:5px;
+}
+			
+#l, #s {
+	top:20px;
+	height:75px;
+}
+			
+#l {
+	border-bottom: solid 1px black;
+}
+			
+#s {
+	border-right: solid 1px black;
+	width:2px;
+}

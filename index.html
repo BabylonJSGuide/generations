@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Generations</title>
+		<link rel=stylesheet href="styles/style.css" type="text/css">
+		<script type='text/javascript' src="scripts/script.js"></script>
+		<script type='text/javascript'>
+			window.onload=main;
+	
+			function main() {
+				var jck=new person('John Charles King','28/11/1949');
+				var jcm=new person('Jean Christine McGregor','4/11/1951','2/9/1999');
+				jcm.wed='13/7/1974';
+				var rjk=new person('Richard James King', '26/11/1979',null,jcm,jck);
+				var dpk=new person('David Peter King','13/10/1983',null,jcm,jck);
+				var irk=new person('Iain Robert King','24/8/1986',null,jcm,jck);
+				var acjk=new person('Adam Christopher John King','16/2/1992',null,jcm,jck);
+				jcm.children = [rjk,dpk,irk,acjk];
+				jck.children = jcm.children;
+				var jcmpic={
+					source:"jcmfamily",
+					label:"From Left to Right - Back:Richard Jean John<br>Front:David Adam Iain<br> C 1993"
+				};
+				jcm.pictures=[jcmpic];
+				
+				//Jean King's Parents and siblings
+				var jrm=new person('John Robert McGregor','14/1/1915','14/5/1989');
+				var aem=new person('Annie Edna Littlewood','21/12/1914','16/3/2013');
+				var rcm=new person('Robert Charles McGregor','24/7/1946','10/3/2011',aem,jrm);
+				aem.wed=null;
+				rcm.mum=jcm.mum=aem;
+				rcm.dad=jcm.dad=jrm;
+				jrm.children=aem.children=jcm.parentsChildren= [rcm,jcm];
+				var jrmpic1={
+					source:"edna and john 1986",
+					label:"Edna and John C 1986."
+				};
+				var jrmpic2={
+					source:"john mc 1987",
+					label:"John at Jersey C 1987 ."
+				};
+				var jrmpic3={
+					source:"edna and john 1987",
+					label:"Edna and John at Jersey C 1987 ."
+				};
+				jrm.pictures=[jrmpic1,jrmpic2,jrmpic3];
+				
+				//John McGregor parents and siblings
+				var jrm1=new person('John Robert McGregor');
+				var hp=new person('Hannah Peacock');
+				var mmg=new person('Muriel McGregor');
+				jrm.mum=mmg.mum=hp;
+				jrm.dad=mmg.dad=jrm1;
+				jrm1.children=hp.children=jrm.parentsChildren=[mmg,jrm];
+				
+				//Edna Littlewood parents and siblings;
+				var edl=new person('Edwin Littlewood');
+				var sje=new person('Sarah Jane Edwards','9/10/1880');
+				var el1=new person('Edwin Littlewood');
+				var tl=new person('Alfred Littlewood');
+				var efl=new person('Emily Francis Littlewood');
+				var dl=new person('David Littlewood (twin)');
+				var cl=new person('Charles Littlewood (twin)');
+				var pml=new person('Phyliss May Littlewood');
+				var tgl=new person('Thomas Guy Littlewood');
+				aem.mum=el1.mum=tl.mum=efl.mum=dl.mum=cl.mum=pml.mum=tgl.mum=sje;
+				aem.dad=el1.dad=tl.dad=efl.dad=dl.dad=cl.dad=pml.dad=tgl.dad=edl;
+				edl.children=sje.children=aem.parentsChildren=[aem,el1,tl,efl,dl,cl,pml,tgl];
+				 
+				//Sarah Jane Edwards parents and siblings
+				var de=new person('David Edwards','c 1830','c 1900/01');
+				var ag=new person('Anne Grimpo','c 1833','7/10/1918');
+				sje.mum=ag;
+				sje.dad=de;
+				de.children=ag.children=sje.parentsChildren=[sje]; 
+				
+				//David Edwards parents
+				var te2=new person('Thomas Edwards','4/3/1790');
+				var blank=new person('Unknown');
+				de.mum=blank;
+				de.dad=te2;
+				te2.children=blank.children=de.parentsChildren=[de];
+				
+				//John King's parents
+				var fwk=new person('Frederick William King','18/9/1924');
+				var sk=new person('Sylvia King','24/5/1927');
+				sk.wed='18/10/1947';
+				jck.mum=sk;
+				jck.dad=fwk;				
+				fwk.children=sk.children=jck.parentsChildren=[jck];
+				var fwkpic1={
+					source:"fred and sylvia king",
+					label:"Frederick and Sylvia <br>on their wedding day."
+				};
+				var fwkpic2={
+					source:"mum and dad",
+					label:"Frederick and Sylvia 1974."
+				};
+				fwk.pictures=[fwkpic1,fwkpic2];
+				
+				//Frederick William King's parents and siblings
+				var fhk=new person('Frederick Herbert King','17/6/1893','?/?/1975');
+				var rc=new person('Rosina L Carpenter','27/9/1896','?/?/1982');
+				var vk=new person('Violet King');
+				var gk=new person('Gordon King');
+				var ak=new person('Audrey King');
+				rc.wed='18/8/1915';
+				vk.mum=gk.mum=ak.mum=fwk.mum=rc;
+				vk.dad=gk.dad=ak.dad=fwk.dad=fhk;
+				fhk.children=rc.children=fwk.parentsChildren=[vk,gk,ak,fwk];
+				var fhkpic1={
+					source:"nana and grandad king 2",
+					label:"Frederick and Rosina at their<br>Golden Wedding Anniversary."
+				};
+				var fhkpic2={
+					source:"nana and grandad king",
+					label:"Frederick and Rosina."
+				};
+				fhk.pictures=[fhkpic1,fhkpic2];
+				
+				//Frederick Herbert King's parents and siblings
+				var fhkdad=new person('? King');
+				var fhkmum=new person('unknown');
+				fhk.mum=fhkmum;
+				fhk.dad=fhkdad;
+				fhkdad.children=fhkmum.children=fhk.parentsChildren=[fhk];
+				var fhkmumpic={
+					source:"great grandma king",
+					label:"Frederick Herbert King's Mother."
+				};
+				fhkmum.pictures=[fhkmumpic];
+				
+				//Frederick Herbert King's Mum's parents and siblings
+				var fhkmumdad=new person('? Unknown');
+				var fhkmummum=new person('? Warner');
+				fhkmum.mum=fhkmummum;
+				fhkmum.dad=fhkmumdad;
+				fhkmumdad.children=fhkmummum.children=fhkmum.parentsChildren=[fhkmum];
+				var fhkmummumpic={
+					source:"great great gradma warner",
+					label:"Frederick Herbert King's Mother's Mother."
+				};
+				fhkmummum.pictures=[fhkmummumpic];
+				
+				//Rosina Carpenter parents and siblings
+				var rcdad=new person('? Carpenter');
+				var rcmum=new person('unknown');
+				rc.mum=rcmum;
+				rc.dad=rcdad;
+				rcdad.children=rcmum.children=rc.parentsChildren=[rc];
+				var rcprntspic1={
+					source:"great grandad carpenter",
+					label:"Rosina carpenter's Dad."
+				};
+				var rcprntspic2={
+					source:"great grandma carpenter",
+					label:"Rosina carpenter's Mum."
+				};
+				var rcprntspic3={
+					source:"great grandma and grandad carpenter",
+					label:"Rosina carpenter's Mum and Dad."
+				};
+				rcmum.pictures=[rcprntspic1,rcprntspic2,rcprntspic3];
+				
+				//Sylvia King's parents and siblings
+				var shm=new person('Samuel Herbert Mayer','8/10/1906','26/3/1969');
+				var ra=new person('Rita Atherton','29/3/1904');
+				ra.wed='18/12/1926';
+				var vm=new person('Vernon Mayer');
+				var em=new person('Elaine Mayer');
+				var am=new person('Alan Mayer');
+				vm.mum=em.mum=am.mum=sk.mum=ra;
+				vm.dad=em.dad=am.dad=sk.dad=shm;
+				shm.children=ra.children=sk.parentsChildren=[sk,vm,em,am];
+				var rapic={
+					source:"nana and grandad mayer",
+					label:"Samuel and Rita Mayer"
+				};
+				ra.pictures=[rapic];
+				
+				//Sam Mayer's parents and siblings
+				var jtm=new person('John Thomas Mayer','1/5/1880','19/5/1957');
+				var ee=new person('Emily Eagles','24/9/18??','28/1/1963');
+				ee.wed='29/4/1900';
+				var sm0=new person('Sally Mayer');
+				var jm0=new person('John Mayer');
+				var em0=new person('Emily Mayer');
+				var km0=new person('Kate Mayer');
+				var wm0=new person('William Mayer');
+				var bm0=new person('Bessy Mayer');
+				var mm0=new person('Mary Mayer');
+				var sm0=new person('Sidney Mayer');
+				var sm1=new person('Stanley Mayer');
+				sm0.mum=jm0.mum=em0.mum=shm.mum=km0.mum=wm0.mum=bm0.mum=mm0.mum=sm0.mum=sm1.mum=ee;
+				sm0.dad=jm0.dad=em0.dad=shm.dad=km0.dad=wm0.dad=bm0.dad=mm0.dad=sm0.dad=sm1.dad=jtm;
+				jtm.children=ee.children=shm.parentsChildren=[sm0,jm0,em0,shm,km0,wm0,bm0,mm0,sm0,sm1];
+				var jtmpic1={
+					source:"john thomas and emily",
+					label:"John Thomas Mayer and Emily Eagles."
+				};
+				var jtmpic2={
+					source:"john thomas emily eagles",
+					label:"John Thomas Mayer and Emily Eagles."
+				};
+				jtm.pictures=[jtmpic1,jtmpic2];
+				
+				//Rita Atherton's parents and siblings
+				var wa=new person('William Atherton','14/6/1863','?/5/1954');
+				var sjg=new person('Sarah Jane Gater','?/?/1864','?/?/1944');
+				sjg.wed='?/?/1888';
+				var ea=new person('Ethel Atherton');
+				var wla=new person('William Leonard Atherton');
+				var ba=new person('Bertram Atherton');
+				var aa=new person('Arthur Atherton');
+				var aa1=new person('Alice Atherton');
+				var ba1=new person('Bertha Atherton');
+				var va=new person('Victor Atherton');
+				var fa=new person('Flora Atherton');
+				var sa=new person('Sidney Atherton');
+				ea.mum=wla.mum=ba.mum=aa.mum=aa1.mum=ba1.mum=va.mum=fa.mum=ra.mum=sa.mum=sjg;
+				ea.dad=wla.dad=ba.dad=aa.dad=aa1.dad=ba1.dad=va.dad=fa.dad=ra.dad=sa.dad=wa;
+				wa.children=sjg.children=ra.parentsChildren=[ea,wla,ba,aa,aa1,ba1,va,fa,ra,sa];
+				var sjgpic={
+					source:"sara jane gater and william atherton",
+					label:"Sara Jane Gater and William Atherton."
+				};
+				sjg.pictures=[sjgpic];
+				
+				createChart(jcm.children);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="h"></div><div id='m'>=</div><div id="w"></div>
+		<div id='l'></div>
+		<div id='s'></div>
+		<div id='photographs'></div>
+	</body>
+	
+</html>
